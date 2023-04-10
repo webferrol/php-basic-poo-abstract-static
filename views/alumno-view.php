@@ -20,16 +20,26 @@
     <tbody>
       <tr>
         <td>
+          <?=$xurxo->tratamientoPersona('m')?>
+
           <?=$xurxo->getNombre()?>
         </td>
         <td>
         <?=$xurxo->getApellidos()?>
         </td>
         <td>
-        <?=$xurxo->dimeEdad()?>
+        <?=Persona::dimeEdad(new DateTime('1973'))?>
         </td>
       </tr>
     </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="3">
+          El número de caracteres de <strong><?=$xurxo->getNombre()?></strong>
+          es de <mark><?php echo Persona::nombreStringLength($xurxo->getNombre())?></mark>
+        </td>
+      </tr>
+    </tfoot>
   </table>
 </body>
 </html>

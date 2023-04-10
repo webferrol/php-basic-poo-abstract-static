@@ -8,13 +8,13 @@ if (!file_exists($config)) {
 require_once($config);
 require_once(MODELS.'Persona.php');
 
-class Alumno extends Persona{
-
+class Profesor extends Persona{
+  
   function tratamientoPersona(string $genero = 'f'): string {
     if ($genero === 'f') 
-      return 'Pringada';
+      return 'Doña';
     else 
-      return 'Pringado';
+      return 'Don';
   }
-  
+
 }

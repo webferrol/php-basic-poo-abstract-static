@@ -1,6 +1,6 @@
 <?php
 abstract class Persona {
-  private string $nombre;
+  protected string $nombre;
   private string $apellidos;
   private ?DateTime $fechaNacimiento;
 
@@ -8,6 +8,10 @@ abstract class Persona {
     $this->nombre = $name;
     $this->apellidos = $lastName??'';
     $this->fechaNacimiento = $birthDay;
+  }
+
+  function setNombre (string $nombre): void {
+    $this->nombre = $nombre;
   }
 
   public function getNombre (): string {
@@ -27,6 +31,10 @@ abstract class Persona {
             : '';
   }
 
+  static function nombreStringLength (string $nombre): int {
+    return strlen($nombre);
+  }
+
   function mayorEdad () : ?bool {
     if (!$this->fechaNacimiento) return null;
     $anho_actual = new DateTime();
@@ -35,14 +43,16 @@ abstract class Persona {
     return $anhos>=18;
   }
 
-  function dimeEdad () : ?int {
-    if (!$this->fechaNacimiento) return null;
+  static function dimeEdad (?DateTime $nacimiento) : ?int {
+    if (!$nacimiento) return null;
     $anho_actual = new DateTime();
-    $intervalo = $anho_actual->diff($this->fechaNacimiento);
+    $intervalo = $anho_actual->diff($nacimiento);
     return $intervalo->y;   
   }
 
   public function dimeNombreCompleto (): string {
     return sprintf('%s %s',$this->nombre,$this->apellidos);
   }
+
+  abstract public function tratamientoPersona (string $genero='f') : string;
 }
