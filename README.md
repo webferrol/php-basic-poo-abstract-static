@@ -5,17 +5,17 @@ Una __clase abstract__ no puede ser instanciada por tanto es la máxima expresi�
 
 ## Ejercicio
 
-- [] Crea una clase Persona con los siguientes atributos privados o protegidos:
+- [x] Crea una clase Persona con los siguientes atributos privados o protegidos:
   - {string} nombre
   - {string} apellidos
-  - {DateTime} fecha de nacimiento
+  - {[DateTime](https://www.php.net/manual/es/class.datetime.php)} fecha de nacimiento
 
-- [] Convertir la clase Persona en abstracta
+- [x] Convertir la clase Persona en abstracta
 
-- [] Crear su constructores, getters y setters
+- [x] Crear su constructores, getters y setters
 
-- [] Crear las siguientes funciones:
+- [x] Crear las siguientes funciones:
   – mayorEdad: indica si es o no mayor de edad.
   – nombreCompleto: devuelve el nombre mas apellidos
 
-- [] Crear otra clase llamada Alumno que herederá todo de la clase Persona.
+- [x] Crear otra clase llamada Alumno que herederá todo de la clase Persona.
